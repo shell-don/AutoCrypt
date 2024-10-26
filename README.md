@@ -1,5 +1,5 @@
 # AutoCrypt
-Chiffrement automatisé d'AES-256 (défault) en s'appuyant sur KeepassXC pour la gestion des clés. 
+Chiffrement automatisé d'AES-256 (défault) en s'appuyant sur KeepassXC pour la gestion des clés. (MacOS)
 
 ## Installation
 Pré-requis
