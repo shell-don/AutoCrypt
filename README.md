@@ -31,7 +31,7 @@ Quel est le mot de passe de la database ?
 ```
 Entrer le mot de passe de la database, et voilà !
 
-Pour le déchiffrement, lacer le script de déchiffrement (AutoCryptR.sh)
+Pour le déchiffrement, lancer le script de déchiffrement (AutoCryptR.sh)
 ```zsh
 Combien de fois voulez-vous le déiffrer ? 
 N
