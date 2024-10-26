@@ -1,5 +1,10 @@
 Parce que :
-<La confidentialité est un droit de l'homme fondamental, reconnu par l'article 12 de la Déclaration Universelle des Droits de l'Homme : "Nul ne doit être soumis à des interventions arbitraires dans sa vie privée, sa famille, sa maison et sa correspondance, ni à des attaques touchant à son honneur et à sa réputation. Tous ont droit à la protection de la loi contre de telles interventions ou attaques."
-Les défenseurs des libertés estiment que l'usage le plus large du chiffrement est essentiel pour garantir le droit à la confidentialité. [...] Tandis que les tenants de la loi plaident que le chiffrement doit être interdit parce qu'il enlèverait toute efficacité à Echelon, les défenseurs des libertés estiment que le chiffrement est nécessaire justement pour rendre Echelon inefficace. 
-"C'est une bien misérable politique que de taper sans discrimination sur une technologie simplement parce que quelques criminels pourraient en tirer parti. N'importe quel citoyen américain peut s'acheter une paire de gants même si un cambrioleur peut s'en servir pour fouiller toute une maison sans laisser d'empreintes. La cryptographie est une technologie de protection des données, comme les gants sont une technologie de protection des mains."
+<La confidentialité est un droit de l'homme fondamental, reconnu par l'article 12 de la Déclaration Universelle des Droits de l'Homme :
+"Nul ne doit être soumis à des interventions arbitraires dans sa vie privée, sa famille, sa maison et sa correspondance, ni à des attaques touchant à 
+son honneur et à sa réputation. Tous ont droit à la protection de la loi contre de telles interventions ou attaques."
+Les défenseurs des libertés estiment que l'usage le plus large du chiffrement est essentiel pour garantir le droit à la confidentialité. [...] 
+Tandis que les tenants de la loi plaident que le chiffrement doit être interdit parce qu'il enlèverait toute efficacité à Echelon, les défenseurs des libertés estiment que le chiffrement est nécessaire justement pour rendre Echelon inefficace. 
+"C'est une bien misérable politique que de taper sans discrimination sur une technologie simplement parce que quelques criminels pourraient en tirer parti.
+N'importe quel citoyen américain peut s'acheter une paire de gants même si un cambrioleur peut s'en servir pour fouiller toute une maison sans laisser d'empreintes.
+La cryptographie est une technologie de protection des données, comme les gants sont une technologie de protection des mains."
 En vérité, il n'y a pas de raison pour que nous ne changions pas de politique cryptographique en fonction des évènements politiques, économiques et sociaux.le facteur prépondérant viendra de ce que le public redoutera le plus, des criminels ou du gouvernement.>Simon Singh 
