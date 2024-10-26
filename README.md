@@ -6,7 +6,7 @@ Pré-requis
 ```zsh
 brew install KeepassXC && brew install openssl@3 
 ```
-Créer une base donnés avec : un mot de passe fort, une Yubikey et un fichier clé.
+Créer une base de donné avec : un mot de passe fort, une Yubikey et un fichier clé.
 Changer les variables Set-up du script (pour le déchiffrement aussi)
 ```zsh
 ##########
