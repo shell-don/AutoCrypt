@@ -8,7 +8,7 @@
 KEYFILEPATH=<Key_File_path>
 YUBIKEY=<slot[:serial]>
 DBPATH=<DataBase_path>
-FILEPATH=<File_to_encrypt_path>
+FILEPATH=<File_to_decrypt_path>
 
 ########
 # PATH #
