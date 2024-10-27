@@ -5,10 +5,10 @@
 # Set Up #
 ##########
 
-KEYFILEPATH=/Volumes/FichierClé/Clé_Chiffre_DB.keyx
-YUBIKEY=2:19927424
-DBPATH=/Users/mathis/Documents/Informatique/Shell/Chiffre.kdbx
-FILEPATH=/Users/mathis/Desktop/test2.txt
+KEYFILEPATH=<Key_File_path>
+YUBIKEY=<slot[:serial]>
+DBPATH=<DataBase_path>
+FILEPATH=<File_to_encrypt_path>
 
 ########
 # PATH #
