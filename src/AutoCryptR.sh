@@ -30,9 +30,7 @@ until [[ $N -lt $i ]]
 	do
 		
 		X=$(echo $DBPWRD | keepassxc-cli show -s -a password -y $YUBIKEY -k $KEYFILEPATH $DBPATH $FILE/$N)
-		sleep 1
 		openssl enc -d -aes-256-cbc -in $FILEPATH -out ${FILEPATH}.enc -salt -pbkdf2 -k $X
-		sleep 1
 		dd if=${FILEPATH}.enc of=$FILEPATH status=none
 		rm ${FILEPATH}.enc
 		echo "Déiffrement $N effectué"
@@ -40,5 +38,4 @@ until [[ $N -lt $i ]]
 	done
 
 echo $DBPWRD | keepassxc-cli rmdir -y $YUBIKEY -k $KEYFILEPATH $DBPATH $FILE
-sleep 1
 echo $DBPWRD | keepassxc-cli rmdir -y $YUBIKEY -k $KEYFILEPATH $DBPATH Corbeille
