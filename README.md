@@ -1,6 +1,6 @@
 # AutoCrypt
 Chiffrement automatisé d'AES-256-CBC (défault) en s'appuyant sur KeepassXC pour la gestion des clés. (MacOS)
-![Cette image contient un message chiffré avec mon algorithme : crack-le ](./outguess.jpg)
+![Cette image contient un message chiffré avec mon algorithme : crack-le ](Outguess.jpg)
 
 ## Installation
 Pré-requis
