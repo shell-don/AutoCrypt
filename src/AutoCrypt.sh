@@ -26,16 +26,12 @@ read -s -r DBPWRD
 
 FILE=${FILEPATH##*/}
 echo $DBPWRD | keepassxc-cli mkdir -y $YUBIKEY -k $KEYFILEPATH -q $DBPATH $FILE
-sleep 1
 i=1 
 until [[ $i -gt $N ]]
 	do
 		echo $DBPWRD | keepassxc-cli add -y $YUBIKEY -k $KEYFILEPATH -q -g -L 999 -e -c ѮѰѠѪѦѬѨ $DBPATH $FILE/$i
-		sleep 1
 		X=$(echo $DBPWRD | keepassxc-cli show -s -a password -y $YUBIKEY -k $KEYFILEPATH $DBPATH $FILE/$i)
-		sleep 1
 		openssl enc -aes-256-cbc -in $FILEPATH -out ${FILEPATH}.enc -salt -pbkdf2 -k $X
-		sleep 1
 		dd if=${FILEPATH}.enc of=$FILEPATH status=none
 		rm ${FILEPATH}.enc
 		echo "Chiffrement $i effectué"
