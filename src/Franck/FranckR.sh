@@ -19,9 +19,9 @@ PATH=/usr/bin:/bin:/usr/sbin:/sbin:/dev:/Applications/KeePassXC.app/contents/Mac
 # Code #
 ########
 
-echo "Quel est le chemin du fichier à déiffrer ?"
+echo "Quel est le chemin du fichier à déchiffrer ?"
 read FILEPATH
-echo "Combien de fois voulez-vous le déiffrer ? "  
+echo "Combien de fois voulez-vous le déchiffrer ? "  
 read N 
 echo "Quel est le mot de passe de la database ? "  
 read -s -r DBPWRD
