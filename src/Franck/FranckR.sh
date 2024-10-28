@@ -1,5 +1,5 @@
 #!/bin/sh
-# Un algorithme de déchiffrement sous stéroides.
+# Un algorithme de déchiffrement en cascade sous stéroides.
 
 ##########
 # Se† Up #
