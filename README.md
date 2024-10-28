@@ -2,7 +2,7 @@
 Chiffrement automatisé d'AES-256-CBC (défault) en s'appuyant sur KeepassXC pour la gestion des clés. (MacOS)
 
 ![Cette image contient un message chiffré avec mon algorithme : crack-le ](Munch.jpg)
-Cette image contient un message chiffré avec mon algorithme : crack-le
+Cette image contient un message chiffré 10 fois : crack-le
 ## Installation
 Pré-requis
 ```zsh
@@ -18,24 +18,20 @@ Changer les variables Set-up du script (pour le déchiffrement aussi)
 KEYFILEPATH=<Key_File_path>
 YUBIKEY=<slot[:serial]>
 DBPATH=<DataBase_path>
-FILEPATH=<File_to_encrypt_path>
 ```
 Rendre éxécutable le script
 ```zsh
 chmod u+x <AutoCrypt.sh_path>
 ``` 
 ## Usage
-Lancer le script dans un terminal
+Lancer le script voulu dans un terminal :
 ```zsh
+Quel est le chemin du fichier à chiffrer ?
+~/Desktop/Hello.txt  
 Combien de fois voulez-vous le chiffrer ? 
-N
-Quel est le mot de passe de la database ?
+3
+Quel est le mot de passe de la database ? 
 ```
 Entrer le mot de passe de la database, et voilà !
 
-Pour le déchiffrement, lancer le script de déchiffrement (AutoCryptR.sh)
-```zsh
-Combien de fois voulez-vous le déiffrer ? 
-N
-Quel est le mot de passe de la database ?
-```
+Pour le déchiffrement, lancer le script de déchiffrement indiqué par le R, type : FranckR.sh
