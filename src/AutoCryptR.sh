@@ -1,4 +1,5 @@
 #!/bin/sh
+# Algorithme d'automatisation (déchiffrement) d'AES-256-CBC via une database kdbx à trois facteurs d'authentification
 
 ##########
 # Set Up #
