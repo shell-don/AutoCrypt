@@ -2,7 +2,7 @@
 # Un algorithme de déchiffrement sous stéroides.
 
 ##########
-# Set Up #
+# Se† Up #
 ##########
 
 KEYFILEPATH=<Key_File_path>
@@ -10,43 +10,48 @@ YUBIKEY=<slot[:serial]>
 DBPATH=<DataBase_path>
 
 ########
-# PATH #
+# Pa†H # 
 ########
 
 PATH=/usr/bin:/bin:/usr/sbin:/sbin:/dev:/Applications/KeePassXC.app/contents/MacOS:/opt/homebrew/bin:/opt/homebrew/Cellar/openssl@3/3.3.2/bin: 
 
 ########
-# Code #
+# Co∂e #
 ########
 
-echo "Quel est le chemin du fichier à déchiffrer ?"
+echo "Quel est le chemin du fichier à chiffrer ?"
 read FILEPATH
-echo "Combien de fois voulez-vous le déchiffrer ? "  
+echo "Combien de fois voulez-vous le déiffrer ? "  
 read N 
 echo "Quel est le mot de passe de la database ? "  
 read -s -r DBPWRD
 
 FILE=${FILEPATH##*/}
+FRANCK=("F" "R" "A" "N" "C" "K")
+
 i=1 
 until [[ $N -lt $i ]]
 	do
 		
-		X=$(echo $DBPWRD | keepassxc-cli show -s -a password -y $YUBIKEY -k $KEYFILEPATH $DBPATH $FILE/$N)
-		openssl enc -sm4-cbc -d -in $FILEPATH -out ${FILEPATH}.enc -salt -pbkdf2 -k $X
-		dd if=${FILEPATH}.enc of=$FILEPATH status=none
-		rm ${FILEPATH}.enc
-		openssl enc -des-ede3-cbc -d -in $FILEPATH -out ${FILEPATH}.enc -salt -pbkdf2 -k $X
-		dd if=${FILEPATH}.enc of=$FILEPATH status=none
-		rm ${FILEPATH}.enc
-		openssl enc -camellia-256-cbc -d -in $FILEPATH -out ${FILEPATH}.enc -salt -pbkdf2 -k $X
-		dd if=${FILEPATH}.enc of=$FILEPATH status=none
-		rm ${FILEPATH}.enc
-		openssl enc -aes-256-cbc -d -in $FILEPATH -out ${FILEPATH}.enc -salt -pbkdf2 -k $X
-		dd if=${FILEPATH}.enc of=$FILEPATH status=none
-		rm ${FILEPATH}.enc
+		X=$(keepassxc-cli show -s -a password -y $YUBIKEY -k $KEYFILEPATH $DBPATH $FILE/$N <<< $DBPWRD)
+		for x in "${FRANCK[@]}" 
+			do
+				openssl enc -sm4-cbc -d -in $FILEPATH -out ${FILEPATH}.enc -salt -pbkdf2 -k $X
+				dd if=${FILEPATH}.enc of=$FILEPATH status=none
+				rm ${FILEPATH}.enc
+				openssl enc -des-ede3-cbc -d -in $FILEPATH -out ${FILEPATH}.enc -salt -pbkdf2 -k $X
+				dd if=${FILEPATH}.enc of=$FILEPATH status=none
+				rm ${FILEPATH}.enc
+				openssl enc -camellia-256-cbc -d -in $FILEPATH -out ${FILEPATH}.enc -salt -pbkdf2 -k $X
+				dd if=${FILEPATH}.enc of=$FILEPATH status=none
+				rm ${FILEPATH}.enc
+				openssl enc -aes-256-cbc -d -in $FILEPATH -out ${FILEPATH}.enc -salt -pbkdf2 -k $X
+				dd if=${FILEPATH}.enc of=$FILEPATH status=none
+				rm ${FILEPATH}.enc
+			done
 		echo "Déiffrement $N effectué"
 		((N--))
 	done
 
-echo $DBPWRD | keepassxc-cli rmdir -y $YUBIKEY -k $KEYFILEPATH $DBPATH $FILE
-echo $DBPWRD | keepassxc-cli rmdir -y $YUBIKEY -k $KEYFILEPATH $DBPATH Corbeille
+keepassxc-cli rmdir -y $YUBIKEY -k $KEYFILEPATH $DBPATH $FILE <<< $DBPWRD
+keepassxc-cli rmdir -y $YUBIKEY -k $KEYFILEPATH $DBPATH Corbeille <<< $DBPWRD
