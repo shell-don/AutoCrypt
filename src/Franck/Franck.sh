@@ -1,5 +1,5 @@
 #!/bin/sh
-# Un algorithme de chiffrement sous stéroides.
+# Un algorithme de chiffrement en cascade sous stéroides.
 
 ##########
 # Se† Up #
