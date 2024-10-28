@@ -8,7 +8,6 @@
 KEYFILEPATH=<Key_File_path>
 YUBIKEY=<slot[:serial]>
 DBPATH=<DataBase_path>
-FILEPATH=<File_to_decrypt_path>
 
 ########
 # PATH #
@@ -20,6 +19,8 @@ PATH=/usr/bin:/bin:/usr/sbin:/sbin:/dev:/Applications/KeePassXC.app/contents/Mac
 # Code #
 ########
 
+echo "Quel est le chemin du fichier à déiffrer ?"
+read FILEPATH
 echo "Combien de fois voulez-vous le déiffrer ? "  
 read N 
 echo "Quel est le mot de passe de la database ? "  
