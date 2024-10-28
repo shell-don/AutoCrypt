@@ -19,9 +19,9 @@ PATH=/usr/bin:/bin:/usr/sbin:/sbin:/dev:/Applications/KeePassXC.app/contents/Mac
 # Co∂e #
 ########
 
-echo "Quel est le chemin du fichier à chiffrer ?"
+echo "Quel est le chemin du fichier à déchiffrer ?"
 read FILEPATH
-echo "Combien de fois voulez-vous le déiffrer ? "  
+echo "Combien de fois voulez-vous le déchiffrer ? "  
 read N 
 echo "Quel est le mot de passe de la database ? "  
 read -s -r DBPWRD
@@ -39,12 +39,15 @@ until [[ $N -lt $i ]]
 				openssl enc -sm4-cbc -d -in $FILEPATH -out ${FILEPATH}.enc -salt -pbkdf2 -k $X
 				dd if=${FILEPATH}.enc of=$FILEPATH status=none
 				rm ${FILEPATH}.enc
-				openssl enc -des-ede3-cbc -d -in $FILEPATH -out ${FILEPATH}.enc -salt -pbkdf2 -k $X
-				dd if=${FILEPATH}.enc of=$FILEPATH status=none
-				rm ${FILEPATH}.enc
-				openssl enc -camellia-256-cbc -d -in $FILEPATH -out ${FILEPATH}.enc -salt -pbkdf2 -k $X
-				dd if=${FILEPATH}.enc of=$FILEPATH status=none
-				rm ${FILEPATH}.enc
+				for x in "${FRANCK[@]}" 
+					do 
+						openssl enc -des-ede3-cbc -d -in $FILEPATH -out ${FILEPATH}.enc -salt -pbkdf2 -k $X
+						dd if=${FILEPATH}.enc of=$FILEPATH status=none
+						rm ${FILEPATH}.enc
+						openssl enc -camellia-256-cbc -d -in $FILEPATH -out ${FILEPATH}.enc -salt -pbkdf2 -k $X
+						dd if=${FILEPATH}.enc of=$FILEPATH status=none
+						rm ${FILEPATH}.enc
+					done
 				openssl enc -aes-256-cbc -d -in $FILEPATH -out ${FILEPATH}.enc -salt -pbkdf2 -k $X
 				dd if=${FILEPATH}.enc of=$FILEPATH status=none
 				rm ${FILEPATH}.enc
