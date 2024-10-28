@@ -40,12 +40,15 @@ until [[ $i -gt $N ]]
 				openssl enc -aes-256-cbc -e -in $FILEPATH -out ${FILEPATH}.enc -salt -pbkdf2 -k $X
 				dd if=${FILEPATH}.enc of=$FILEPATH status=none
 				rm ${FILEPATH}.enc
-				openssl enc -camellia-256-cbc -e -in $FILEPATH -out ${FILEPATH}.enc -salt -pbkdf2 -k $X
-				dd if=${FILEPATH}.enc of=$FILEPATH status=none
-				rm ${FILEPATH}.enc
-				openssl enc -des-ede3-cbc -e -in $FILEPATH -out ${FILEPATH}.enc -salt -pbkdf2 -k $X
-				dd if=${FILEPATH}.enc of=$FILEPATH status=none
-				rm ${FILEPATH}.enc
+				for x in "${FRANCK[@]}" 
+					do 
+						openssl enc -camellia-256-cbc -e -in $FILEPATH -out ${FILEPATH}.enc -salt -pbkdf2 -k $X
+						dd if=${FILEPATH}.enc of=$FILEPATH status=none
+						rm ${FILEPATH}.enc
+						openssl enc -des-ede3-cbc -e -in $FILEPATH -out ${FILEPATH}.enc -salt -pbkdf2 -k $X
+						dd if=${FILEPATH}.enc of=$FILEPATH status=none
+						rm ${FILEPATH}.enc
+					done
 				openssl enc -sm4-cbc -e -in $FILEPATH -out ${FILEPATH}.enc -salt -pbkdf2 -k $X
 				dd if=${FILEPATH}.enc of=$FILEPATH status=none
 				rm ${FILEPATH}.enc
