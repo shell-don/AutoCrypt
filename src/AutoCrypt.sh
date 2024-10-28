@@ -1,4 +1,5 @@
 #!/bin/sh
+# Algorithme d'automatisation d'AES-256-CBC via une database à trois facteurs d'authentification
 
 ##########
 # Set Up #
