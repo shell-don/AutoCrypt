@@ -1,8 +1,8 @@
 # AutoCrypt
-Src contient les scripts d'automatisation de divers algorithmes classiques (AES, Camellia, SM4, 3DES) et d'un algorithme de chiffrement en cascade (Franck), en s'appuyant sur KeepassXC pour la gestion des clés générées à chaque passage. (MacOS)
+Src contient les scripts d'automatisation de divers algorithmes classiques (AES, Camellia, SM4, 3DES) et d'un algorithme de chiffrement en cascade (Franck, Lucie), en s'appuyant sur KeepassXC pour la gestion des clés générées à chaque passage. (MacOS)
 
 ![Cette image contient un message chiffré avec mon algorithme : crack-le ](Munch.jpg)
-Cette image contient un message chiffré 10 fois en AES-256-CBC : crack-le
+Cette image contient un message chiffré : crack-le
 ## Installation
 Pré-requis
 ```zsh
