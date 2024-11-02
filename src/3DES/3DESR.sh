@@ -35,7 +35,7 @@ until [[ $N -lt $i ]]
 		openssl enc -des-ede3-cbc -d -in $FILEPATH -out ${FILEPATH}.enc -salt -pbkdf2 -k $X
 		dd if=${FILEPATH}.enc of=$FILEPATH status=none
 		rm ${FILEPATH}.enc
-		echo "Déiffrement $N effectué"
+		echo "Déchiffrement $N effectué"
 		((N--))
 	done
 
