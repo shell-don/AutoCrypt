@@ -52,7 +52,7 @@ until [[ $N -lt $i ]]
 				dd if=${FILEPATH}.enc of=$FILEPATH status=none
 				rm ${FILEPATH}.enc
 			done
-		echo "Déiffrement $N effectué"
+		echo "Déchiffrement $N effectué"
 		((N--))
 	done
 
