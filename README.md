@@ -1,6 +1,7 @@
 # AutoCrypt
 Src contient les scripts d'automatisation de divers algorithmes classiques (AES, Camellia, SM4, 3DES) et deux algorithmes de chiffrement en cascade (Franck, Lucie) en s'appuyant sur KeepassXC pour la gestion des clés générées à chaque passage. (MacOS)
 
+![Pierre Soulages](Outrenoir.jpg)
 
 ## Installation
 Pré-requis
