@@ -18,7 +18,7 @@ PATH=/usr/bin:/bin:/usr/sbin:/sbin:/dev:/Applications/KeePassXC.app/contents/Mac
 # Co∂e #
 ########
 
-echo "Quel est le chemin du fichier à chiffrer ?"
+echo "Quel est le chemin du fichier à déchiffrer ?"
 read FILEPATH
 echo "Quel est le mot de passe de la database ? " 
 read -s -r DBPWRD
@@ -42,7 +42,7 @@ until [[ $N -lt $i ]]
 				rm ${FILEPATH}.enc
 				((x++))
 			done
-		echo "Déiffrement $N effectué"
+		echo "Déchiffrement $N effectué"
 		((N--))
 	done
 
