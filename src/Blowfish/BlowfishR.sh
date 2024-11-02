@@ -1,5 +1,5 @@
 #!/bin/sh
-# Algorithme d'automatisation (déchiffrement) d'Aria-256 mode CBC via une database kdbx à trois facteurs d'authentification
+# Algorithme d'automatisation (déchiffrement) de Blowfish mode CBC via une database kdbx à trois facteurs d'authentification
 
 ##########
 # Se† Up #
