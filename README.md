@@ -1,5 +1,5 @@
 # AutoCrypt
-Src contient les scripts d'automatisation de divers algorithmes classiques (AES, Camellia, SM4, 3DES, Blowfish, CAST5) et deux algorithmes de chiffrement en cascade (Franck, Lucie) en s'appuyant sur KeepassXC pour la gestion des clés générées à chaque passage. (MacOS)
+Src contient les scripts d'automatisation de divers algorithmes classiques (AES, Camellia, SM4, 3DES, Blowfish, CAST5) et deux algorithmes de chiffrement en cascade (Franck, Lucie) en s'appuyant sur KeepassXC pour la gestion des clés générées à chaque passage. (MacOS) Ainsi que l'automatisation d'RSA.
 
 ![E.Delacroix](Madelaine.jpeg)
 
