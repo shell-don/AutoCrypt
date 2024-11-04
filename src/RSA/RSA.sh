@@ -1,7 +1,7 @@
 # !/bin/sh
 # Autaumatisation du chiffrement d'un fichier grâce à RSA
 # pré-requis : avoir une clé publique
-# J'ai privilégié la sécurité sur l'efficacité. 100Mo = 40s
+# J'ai privilégié la sécurité sur l'efficacité pour le chiffrement. 100Mo = 40s
 
 ##########
 # Se† Up #
