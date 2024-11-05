@@ -3,4 +3,4 @@ Src contient les scripts d'automatisation de divers algorithmes symétriques cla
 
 ![E.Delacroix](Madelaine.jpeg)
 
-La particularité de cette implémentation des algorithmes de chiffrements (symétriques) d'openssl est qu'elle permet de chiffrer N fois un même fichier (appelé surchiffrement) avec des clés différentes, là où la plupart des autres repo se contente d'un seul chiffrement. L'autre avantage est la gestion des clés de chiffrement puisqu'elle sont générées de manière complexe et stocké automatiquement dans votre base de données KeepassXC, laquelle est protégé par trois facteurs d'authentifications. 
+La particularité de cette implémentation des algorithmes de chiffrements (symétriques) d'openssl est qu'elle permet de chiffrer N fois un même fichier (appelé surchiffrement) avec des clés différentes, là où la plupart des autres repo se contente d'un seul chiffrement. L'autre avantage est la gestion des clés de chiffrement puisqu'elle sont générées de manière complexe (13 000 d'entropie par clé/passage) et stocké automatiquement dans votre base de données KeepassXC, laquelle est protégé par trois facteurs d'authentifications. 
