@@ -1,7 +1,7 @@
 ## Installation
 
 ### Symétrique
-Pré-requis pour les algorithmes symétriques
+Pré-requis pour les algorithmes symétriques :
 
 ```zsh
 brew install KeepassXC && brew install openssl@3 
@@ -9,7 +9,7 @@ brew install KeepassXC && brew install openssl@3
 Créer une base de donné avec : un mot de passe fort, une Yubikey et un fichier clé.
 
 ### Asymétrique
-Pré-requis pour les algorithmes asymétriques (openssl suffit)
+Pré-requis pour les algorithmes asymétriques (openssl suffit) :
 
 ```zsh
 brew install openssl@3 
@@ -33,7 +33,7 @@ Remarque : Si vous rencontrez un problème d'accès pendant l'éxécution du scr
 
 ### Asymétrique 
 
-Configurer uniquement le chemin vers la bonne clés (publique ou privée)
+Configurer uniquement le chemin vers la bonne clé (publique ou privée)
 
 Remarque : RSA.sh et RSAR.sh utilise des clés de 4096 bit
 
