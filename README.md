@@ -4,4 +4,5 @@ Src contient les scripts d'automatisation de divers algorithmes symétriques cla
 ![E.Delacroix](Madelaine.jpeg)
 
 On ne code pas dans l'espoir de succès, Non ! C'est bien plus beau lorsque c'est inutile ! 
+
 (Inspiré de Cyrano de Bergerac d'Edmond Rostand) 
