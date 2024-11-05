@@ -14,6 +14,13 @@ Pré-requis pour les algorithmes asymétriques (openssl suffit) :
 ```zsh
 brew install openssl@3 
 ```
+Une clé RSA publique et privé de 4096 bit (commande de génération) 
+
+```zsh
+openssl genpkey -algorithm RSA -out ~/desktop/ClePrive.pem -pkeyopt rsa_keygen_bits:4096
+openssl rsa -pubout -in ~/desktop/ClePrive.pem -out ~/desktop/ClePublique.pem
+```
+
 ## Configuration des scripts
 
 #### Symétrique
