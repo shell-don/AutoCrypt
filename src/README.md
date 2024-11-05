@@ -1,6 +1,6 @@
 ## Installation
 
-### Symétrique
+#### Symétrique
 Pré-requis pour les algorithmes symétriques :
 
 ```zsh
@@ -8,7 +8,7 @@ brew install KeepassXC && brew install openssl@3
 ```
 Créer une base de données avec : un mot de passe fort, une Yubikey et un fichier clé.
 
-### Asymétrique
+#### Asymétrique
 Pré-requis pour les algorithmes asymétriques (openssl suffit) :
 
 ```zsh
@@ -16,7 +16,7 @@ brew install openssl@3
 ```
 ## Configuration des scripts
 
-### Symétrique
+#### Symétrique
 L'automatisation ne peut se faire que si le script accède aux bons fichiers. Pour cela, il 
 faut configurer les variables dans Set Up avec les bons chemins demandés.
 
@@ -31,7 +31,7 @@ DBPATH=<DataBase_path>
 ```
 Remarque : Si vous rencontrez un problème d'accès pendant l'éxécution du script, vérifier le PATH
 
-### Asymétrique 
+#### Asymétrique 
 
 Configurer uniquement le chemin vers la bonne clé (publique ou privée)
 
