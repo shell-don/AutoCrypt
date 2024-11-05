@@ -17,7 +17,7 @@ brew install openssl@3
 ## Configuration des scripts
 
 ### Symétrique
-L'automatisation ne peut se faire que si le script accède au bon fichier. Pour cela, il 
+L'automatisation ne peut se faire que si le script accède aux bons fichiers. Pour cela, il 
 faut configurer les variables dans Set Up avec les bons chemins demandés.
 
 ```zsh
