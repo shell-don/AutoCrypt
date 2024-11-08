@@ -25,7 +25,7 @@ read FILEPATH
 # Génération du secret commun 
 openssl pkeyutl -derive -inkey $PRIVATEKEY -peerkey $PUBLICKEY -out ~/desktop/secret.bin
 SECRET=~/desktop/secret.bin
-CLE=$(openssl dgst -sha256 -r /Users/mathis/Desktop/CMD.txt | awk '{print $1}')
+CLE=$(openssl dgst -sha256 -r $SECRET | awk '{print $1}')
 rm $SECRET
 
 # déchiffrement du fichier (symétrique en cascade)
