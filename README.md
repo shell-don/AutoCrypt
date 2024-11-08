@@ -51,6 +51,6 @@ chmod u+x <AutoCrypt.sh_path>
 
 Enfin, lancer le script voulu dans un terminal.
 
-Ces scripts sont fait pour être cumulés et cumulables facilement, la configuration ne se faisant qu'une fois il est recommandé de chiffrer sa clé privé (en plus de la mettre en lieu sûr), par exemple avec l'algorithme symétrique en "cascade" FRANCK, après l'avoir utilisé.
+Ces scripts sont fait pour être cumulés et cumulables facilement (alias), la configuration ne se faisant qu'une fois il est recommandé de chiffrer sa clé privé (en plus de la mettre en lieu sûr), par exemple avec l'algorithme symétrique en "cascade" FRANCK, après l'avoir utilisé.
 
 Remarque : RSAR.sh ne peut déchiffrer que des fichiers qui ont été chiffré avec RSA.sh
