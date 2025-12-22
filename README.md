@@ -3,9 +3,9 @@
 </p>
 
 <p align="center">
+  <img src="https://img.shields.io/badge/POSIX-compliant-blue">
   <img src="https://img.shields.io/badge/shellcheck-clean-brightgreen">
   <img src="https://img.shields.io/badge/do-one--thing--well-blue">
-  <img src="https://img.shields.io/badge/actively--maintained-green">
 </p>
 
 
