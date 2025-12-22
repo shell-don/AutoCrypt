@@ -32,11 +32,18 @@ readonly DBPATH="your_database_path"
 readonly DBPWRD="your_database_password"
 N=3
 ```
+make it executable
+```sh
+chmod u+x autocrypt.sh
+```
+
 ## 👨🏻‍💻 Usage
 
 ```sh
 ./autocrypt.sh -h
 ```
+note : don't source it
+
 ```sh
 Usage :
 
@@ -83,6 +90,58 @@ Cipher algorithm :
 
 Order for options matter
 ```
+## Example 
+I have a file, and i want automatically encrypt it 3 times with aes
+```sh
+mathis ~ $ cat hello.txt
+Hello World !
+```
+So I install autocrypt.sh, plug my Yubikey, my USB database and my USB keyfile, then
+config the script and make it executable. Now I can use
+```sh
+mathis ~ $ ./autocrypt.sh -e -aes-256-cbc hello.txt
+```
+Note that in my case autocrypt.sh is in ~ folder, 
+if the script was in ~/desktop and my current terminal in ~, 
+the cammand should look like : mathis ~ $ ./desktop/autocrypt.sh -e -aes-256-cbc hello.txt
+
+The typical encryption output looks like
+```sh
+Saisir le mot de passe pour déverrouiller /Volumes/FichierClé/ChiffrementAuto/ChiffreAuto test.kdbx :
+1 encryption done
+Saisir le mot de passe pour déverrouiller /Volumes/FichierClé/ChiffrementAuto/ChiffreAuto test.kdbx :
+2 encryption done
+Saisir le mot de passe pour déverrouiller /Volumes/FichierClé/ChiffrementAuto/ChiffreAuto test.kdbx :
+3 encryption done
+```
+Now if I want open my file
+
+```sh
+mathis ~ $ cat hello.txt
+Salted__?05?0N??'?`??&A??ʋl?????^K?^G^V^P???^R?)???Ϳ???ՄuCu.??b?^D??|d??w?Δr?Um^QFy
+```
+For the decryption uses 
+```sh
+mathis ~ $ ./autocrypt.sh -d -aes-256-cbc hello.txt
+```
+The typical decryption output looks like
+```sh
+Saisir le mot de passe pour déverrouiller /Volumes/FichierClé/ChiffrementAuto/ChiffreAuto test.kdbx :
+Decryption 3 done
+Saisir le mot de passe pour déverrouiller /Volumes/FichierClé/ChiffrementAuto/ChiffreAuto test.kdbx :
+Decryption 2 done
+Saisir le mot de passe pour déverrouiller /Volumes/FichierClé/ChiffrementAuto/ChiffreAuto test.kdbx :
+Decryption 1 done
+Saisir le mot de passe pour déverrouiller /Volumes/FichierClé/ChiffrementAuto/ChiffreAuto test.kdbx :
+Le groupe hello.txt a été recyclé.
+Saisir le mot de passe pour déverrouiller /Volumes/FichierClé/ChiffrementAuto/ChiffreAuto test.kdbx :
+Le groupe Corbeille a été supprimé.
+```
+```sh
+mathis17:39 ~ $ cat hello.txt
+Hello World !
+```
+
 ## 📦 Dependencies
 
 AutoCrypt relies on the following tools:
