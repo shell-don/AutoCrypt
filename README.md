@@ -91,7 +91,7 @@ Cipher algorithm :
 Order for options matter
 ```
 ## Example 
-I have a file, and i want automatically encrypt it 3 times with aes
+I have a file, and i want automatically encrypt it 3 (configurable) times with aes
 ```sh
 mathis ~ $ cat hello.txt
 Hello World !
