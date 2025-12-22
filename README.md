@@ -10,7 +10,7 @@ It combines:
 The goal is to **transform digital risk into physical risk**:  
 if one authentication factor is missing, decryption becomes impossible.
 
----
+-
 
 ## ✨ Features
 
@@ -19,9 +19,9 @@ if one authentication factor is missing, decryption becomes impossible.
 - 🧠 Multiple authentication factors
 - 🧹 Secure erase using encryption overwrite
 - 📦 POSIX-compliant (`/bin/sh`)
-- 🐧 Designed for Linux (tested on Tails OS)
+- 🐧 Designed for Unix-like (tested on Tails OS and MacOS)
 
----
+-
 
 ## 📦 Dependencies
 
@@ -38,7 +38,7 @@ AutoCrypt relies on the following tools:
 
 Make sure they are available in your `$PATH`.
 
----
+-
 
 ## 🔧 Installation
 
