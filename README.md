@@ -99,6 +99,7 @@ Cipher algorithm :
 	-camellia-256-cfb          -camellia-256-cfb1         -camellia-256-cfb8
 	-camellia-256-ctr          -camellia-256-ecb          -camellia-256-ofb
 	-camellia128               -camellia192               -camellia256
+	-franck                    -lucie
 
 Order of options matters.
 ```
