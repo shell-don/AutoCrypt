@@ -2,12 +2,6 @@
   <img src="logo.png" alt="AutoCrypt logo" width="300">
 </p>
 
-<h1 align="center">AutoCrypt</h1>
-
-<p align="center">
-  Secure files. Simple shell.
-</p>
-
 <p align="center">
   <img src="https://img.shields.io/badge/POSIX-compliant-blue">
   <img src="https://img.shields.io/badge/Shell-script-lightgrey">
