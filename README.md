@@ -1,50 +1,68 @@
+Parfait, merci pour la précision 👍
+Voici **UN SEUL fichier `README.md` complet**, propre, cohérent et **directement copiable/collable dans GitHub**, sans texte hors-bloc, sans commentaires externes.
+
+---
+
+````md
 # AutoCrypt
 
-AutoCrypt is a **POSIX-compliant shell script** designed to **securely encrypt, decrypt, and securely erase files** using strong cryptography and multiple authentication factors.
+AutoCrypt is a **POSIX-compliant shell script** designed to **securely encrypt, decrypt, and irreversibly erase files** using strong cryptography and multiple authentication factors.
 
 It combines:
-- **OpenSSL** for encryption
+- **OpenSSL** for robust file encryption
 - **KeePassXC CLI** for secure password generation and storage
 - Optional **hardware-backed secrets** (e.g. YubiKey)
 
-The goal is to **transform digital risk into physical risk**:  
-if one authentication factor is missing, decryption becomes impossible.
+The core idea is to **turn digital risk into physical risk**:  
+if *any* authentication factor is missing, **decryption becomes impossible**.
+
+---
 
 ## ✨ Features
 
-- 🔐 Multi-pass encryption
+- 🔐 Configurable multi-pass encryption
 - 🔑 Secure password generation via KeePassXC
-- 🧠 Multiple authentication factors
-- 🧹 Secure erase using encryption overwrite
-- 📦 POSIX-compliant (/bin/sh)
-- 🐧 Designed for Unix-like (tested on Tails OS and MacOS)
+- 🧠 Multiple authentication factors (passwords, files, hardware)
+- 🧹 Secure erase via encryption-based overwrite
+- 📦 Fully POSIX-compliant (`/bin/sh`)
+- 🐧 Designed for Unix-like systems  
+  *(tested on Tails OS and macOS)*
+
+---
 
 ## 🔧 Installation
 
-Download the autocrypt.sh script, then, 
-modify the set up part inside autocrypt.sh
+Download the `autocrypt.sh` script, then edit the **setup section** inside the file:
+
 ```sh
 #====================== SET UP ======================#
 
 readonly KEYFILEPATH="your_key_file_path"
-readonly YUBIKEY=slot:serial
+readonly YUBIKEY="slot:serial"
 readonly DBPATH="your_database_path"
 readonly DBPWRD="your_database_password"
 N=3
-```
-make it executable
+````
+
+Make the script executable:
+
 ```sh
 chmod u+x autocrypt.sh
 ```
 
+---
+
 ## 👨🏻‍💻 Usage
+
+Display help:
 
 ```sh
 ./autocrypt.sh -h
 ```
-note : don't source it
 
-```sh
+> ⚠️ Note: **do not source the script** (`. ./autocrypt.sh`).
+
+```
 Usage :
 
 autocrypt [mode] [algorithm] file1 file2 ...
@@ -53,7 +71,7 @@ Mode :
 
 	-e : encrypt mode
 	-d : decrypt mode
-	-s : erase mode using encryption
+	-s : secure erase (encrypt + overwrite)
 	-h : show help
 
 Cipher algorithm :
@@ -86,73 +104,99 @@ Cipher algorithm :
 	-camellia-256-cfb          -camellia-256-cfb1         -camellia-256-cfb8
 	-camellia-256-ctr          -camellia-256-ecb          -camellia-256-ofb
 	-camellia128               -camellia192               -camellia256
-	-franck                    -lucie
 
-Order for options matter
+Order of options matters.
 ```
-## Example 
-I have a file, and i want automatically encrypt it 3 (configurable) times with aes
+
+---
+
+## 🧪 Example
+
+Suppose you have a file and want to **automatically encrypt it 3 times** (configurable) using AES.
+
 ```sh
 mathis ~ $ cat hello.txt
 Hello World !
 ```
-So I install autocrypt.sh, plug my Yubikey, my USB database and my USB keyfile, then
-config the script and make it executable. Now I can use
+
+After installing `autocrypt.sh`, plugging in your **YubiKey**, your **KeePassXC database**, and your **keyfile**, configure the script and make it executable.
+
+Encrypt the file:
+
 ```sh
 mathis ~ $ ./autocrypt.sh -e -aes-256-cbc hello.txt
 ```
-Note that in my case autocrypt.sh is in ~ folder, 
-if the script was in ~/desktop and my current terminal in ~, 
-the cammand should look like : mathis ~ $ ./desktop/autocrypt.sh -e -aes-256-cbc hello.txt
 
-The typical encryption output looks like
+If the script is located in `~/Desktop` and your terminal is in `~`, use:
+
 ```sh
-Saisir le mot de passe pour déverrouiller /Volumes/FichierClé/ChiffrementAuto/ChiffreAuto test.kdbx :
+./Desktop/autocrypt.sh -e -aes-256-cbc hello.txt
+```
+
+### Encryption output
+
+```sh
+Enter password to unlock KeePass database:
 1 encryption done
-Saisir le mot de passe pour déverrouiller /Volumes/FichierClé/ChiffrementAuto/ChiffreAuto test.kdbx :
+Enter password to unlock KeePass database:
 2 encryption done
-Saisir le mot de passe pour déverrouiller /Volumes/FichierClé/ChiffrementAuto/ChiffreAuto test.kdbx :
+Enter password to unlock KeePass database:
 3 encryption done
 ```
-Now if I want open my file
+
+Trying to read the file now:
 
 ```sh
 mathis ~ $ cat hello.txt
-Salted__?05?0N??'?`??&A??ʋl?????^K?^G^V^P???^R?)???Ϳ???ՄuCu.??b?^D??|d??w?Δr?Um^QFy
+Salted__...binary encrypted data...
 ```
-For the decryption uses 
+
+### Decryption
+
 ```sh
 mathis ~ $ ./autocrypt.sh -d -aes-256-cbc hello.txt
 ```
-The typical decryption output looks like
+
+Decryption output:
+
 ```sh
-Saisir le mot de passe pour déverrouiller /Volumes/FichierClé/ChiffrementAuto/ChiffreAuto test.kdbx :
+Enter password to unlock KeePass database:
 Decryption 3 done
-Saisir le mot de passe pour déverrouiller /Volumes/FichierClé/ChiffrementAuto/ChiffreAuto test.kdbx :
+Enter password to unlock KeePass database:
 Decryption 2 done
-Saisir le mot de passe pour déverrouiller /Volumes/FichierClé/ChiffrementAuto/ChiffreAuto test.kdbx :
+Enter password to unlock KeePass database:
 Decryption 1 done
-Saisir le mot de passe pour déverrouiller /Volumes/FichierClé/ChiffrementAuto/ChiffreAuto test.kdbx :
-Le groupe hello.txt a été recyclé.
-Saisir le mot de passe pour déverrouiller /Volumes/FichierClé/ChiffrementAuto/ChiffreAuto test.kdbx :
-Le groupe Corbeille a été supprimé.
 ```
+
+File restored:
+
 ```sh
-mathis17:39 ~ $ cat hello.txt
+mathis ~ $ cat hello.txt
 Hello World !
 ```
+
+---
 
 ## 📦 Dependencies
 
 AutoCrypt relies on the following tools:
 
-| Tool | Purpose |
-|----|----|
-| `sh` (POSIX) | Script execution |
-| `openssl` | Encryption / Decryption |
+| Tool            | Purpose                       |
+| --------------- | ----------------------------- |
+| `sh` (POSIX)    | Script execution              |
+| `openssl`       | Encryption / Decryption       |
 | `keepassxc-cli` | Password generation & storage |
-| `dd` | Secure overwrite |
-| `rm` | File removal |
-| `uname` | OS detection |
+| `dd`            | Secure overwrite              |
+| `rm`            | File removal                  |
+| `uname`         | OS detection                  |
 
-Make sure they are available in your `$PATH`.
+Ensure all dependencies are available in your `$PATH`.
+
+---
+
+## ⚠️ Disclaimer
+
+AutoCrypt is designed for **advanced users**.
+Losing encryption credentials will result in **permanent data loss**.
+
+
