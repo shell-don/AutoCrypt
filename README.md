@@ -18,12 +18,12 @@ if *any* authentication factor is missing, **decryption becomes impossible**.
 
 ## ✨ Features
 
-- 🔐 Configurable multi-pass encryption
-- 🔑 Secure password generation via KeePassXC
-- 🧠 Multiple authentication factors (passwords, files, hardware)
-- 🧹 Secure erase via encryption-based overwrite
-- 📦 Fully POSIX-compliant (`/bin/sh`)
-- 🐧 Designed for Unix-like systems  
+-  Configurable multi-pass encryption
+-  Secure password generation via KeePassXC
+-  Multiple authentication factors (passwords, files, hardware)
+-  Secure erase via encryption-based overwrite
+-  Fully POSIX-compliant (`/bin/sh`)
+-  Designed for Unix-like systems  
   *(tested on Tails OS and macOS)*
 
 
