@@ -26,12 +26,10 @@ Clone the repository:
 ```sh
 git clone https://github.com/yourusername/autocrypt.git
 cd autocrypt
-'''
 
 ## Usage
 '''sh
 ./autocrypt.sh [mode] [algorithm] file1 file2 ...
-'''
 
 ## 📦 Dependencies
 
