@@ -1,12 +1,9 @@
-<p align="center">
-  <img src="Logo-2.png" alt="AutoCrypt logo" width="300">
+<p>
+  <img src="Logo-2.png" alt="AutoCrypt logo" width="420" align="left">
+  <br><br>
+  <img src="https://img.shields.io/badge/POSIX-compliant-blue">
 </p>
 
-<p align="center">
-  <img src="https://img.shields.io/badge/POSIX-compliant-blue">
-  <img src="https://img.shields.io/badge/Shell-script-lightgrey">
-  <img src="https://img.shields.io/badge/License-MIT-green">
-</p>
 
 # AutoCrypt
 
