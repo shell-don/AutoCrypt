@@ -1,9 +1,10 @@
 <p>
   <img src="Logo-2.png" alt="AutoCrypt logo" width="420" align="left">
-  <br><br>
-  <img src="https://img.shields.io/badge/POSIX-compliant-blue">
 </p>
 
+<p>
+  <img src="https://img.shields.io/badge/POSIX-compliant-blue">
+</p>
 
 # AutoCrypt
 
