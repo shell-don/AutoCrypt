@@ -1,9 +1,9 @@
-<p>
-  <img src="Logo-2.png" alt="AutoCrypt logo" width="420" align="center">
+<p align="center">
+  <img src="Logo-2.png" alt="AutoCrypt logo" width="420">
 </p>
 
-<p>
-  <img src="https://img.shields.io/badge/POSIX-compliant-blue" align="center">
+<p align="center">
+  <img src="https://img.shields.io/badge/POSIX-compliant-blue">
 </p>
 
 AutoCrypt is a **POSIX-compliant shell script** designed to **securely encrypt, decrypt, and irreversibly erase files** using strong cryptography and multiple authentication factors.
