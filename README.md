@@ -10,8 +10,6 @@ It combines:
 The goal is to **transform digital risk into physical risk**:  
 if one authentication factor is missing, decryption becomes impossible.
 
--
-
 ## ✨ Features
 
 - 🔐 Multi-pass encryption
@@ -21,7 +19,19 @@ if one authentication factor is missing, decryption becomes impossible.
 - 📦 POSIX-compliant (`/bin/sh`)
 - 🐧 Designed for Unix-like (tested on Tails OS and MacOS)
 
--
+## 🔧 Installation
+
+Clone the repository:
+
+```sh
+git clone https://github.com/yourusername/autocrypt.git
+cd autocrypt
+'''
+
+## Usage
+'''sh
+./autocrypt.sh [mode] [algorithm] file1 file2 ...
+'''
 
 ## 📦 Dependencies
 
@@ -37,13 +47,3 @@ AutoCrypt relies on the following tools:
 | `uname` | OS detection |
 
 Make sure they are available in your `$PATH`.
-
--
-
-## 🔧 Installation
-
-Clone the repository:
-
-```sh
-git clone https://github.com/yourusername/autocrypt.git
-cd autocrypt
