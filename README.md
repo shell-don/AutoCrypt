@@ -60,7 +60,7 @@ Mode :
 
 	-e : encrypt mode
 	-d : decrypt mode
-	-s : secure erase (encrypt + overwrite)
+	-s : secure erase
 	-h : show help
 
 Cipher algorithm :
