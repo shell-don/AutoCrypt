@@ -1,9 +1,3 @@
-Parfait, merci pour la précision 👍
-Voici **UN SEUL fichier `README.md` complet**, propre, cohérent et **directement copiable/collable dans GitHub**, sans texte hors-bloc, sans commentaires externes.
-
----
-
-````md
 # AutoCrypt
 
 AutoCrypt is a **POSIX-compliant shell script** designed to **securely encrypt, decrypt, and irreversibly erase files** using strong cryptography and multiple authentication factors.
@@ -16,8 +10,6 @@ It combines:
 The core idea is to **turn digital risk into physical risk**:  
 if *any* authentication factor is missing, **decryption becomes impossible**.
 
----
-
 ## ✨ Features
 
 - 🔐 Configurable multi-pass encryption
@@ -28,7 +20,6 @@ if *any* authentication factor is missing, **decryption becomes impossible**.
 - 🐧 Designed for Unix-like systems  
   *(tested on Tails OS and macOS)*
 
----
 
 ## 🔧 Installation
 
@@ -49,8 +40,6 @@ Make the script executable:
 ```sh
 chmod u+x autocrypt.sh
 ```
-
----
 
 ## 👨🏻‍💻 Usage
 
@@ -107,8 +96,6 @@ Cipher algorithm :
 
 Order of options matters.
 ```
-
----
 
 ## 🧪 Example
 
@@ -175,8 +162,6 @@ mathis ~ $ cat hello.txt
 Hello World !
 ```
 
----
-
 ## 📦 Dependencies
 
 AutoCrypt relies on the following tools:
@@ -192,7 +177,6 @@ AutoCrypt relies on the following tools:
 
 Ensure all dependencies are available in your `$PATH`.
 
----
 
 ## ⚠️ Disclaimer
 
