@@ -11,10 +11,7 @@
 
 AutoCrypt is a **POSIX-compliant shell script** designed to **securely encrypt, decrypt, and irreversibly erase files** using strong cryptography and multiple authentication factors.
 
-It combines:
-- **OpenSSL** for robust file encryption
-- **KeePassXC CLI** for secure password generation and storage
-- Optional **hardware-backed secrets** (e.g. YubiKey)
+It combines **OpenSSL** for robust file encryption, **KeePassXC CLI** for secure password generation and storage and an optional **hardware-backed secrets** (e.g. YubiKey).
 
 The core idea is to **turn digital risk into physical risk**:  
 if *any* authentication factor is missing, **decryption becomes impossible**.
