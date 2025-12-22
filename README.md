@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="logo.png" alt="AutoCrypt logo" width="300">
+  <img src="Logo-2.png" alt="AutoCrypt logo" width="300">
 </p>
 
 <p align="center">
