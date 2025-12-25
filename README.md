@@ -55,53 +55,24 @@ Display help:
 ./autocrypt.sh -h
 ```
 
-> ⚠️ Note: **do not source the script** (`. ./autocrypt.sh`).
+Note: **do not source the script** (`. ./autocrypt.sh`).
 
 ```
-Usage :
-
-autocrypt [mode] [algorithm] file1 file2 ...
+Usage : autocrypt [mode] [algorithm] [-v|--verbose] file1 file2 ...
 
 Mode :
-
-	-e : encrypt mode
-	-d : decrypt mode
-	-s : secure erase
-	-h : show help
+	-e  --encrypt : encrypt mode
+	-d  --decrypt : decrypt mode
+	-s  --erase   : erase mode using encryption
+	-h  --help    : show help
 
 Cipher algorithm :
 
-	-aes-128-cbc               -aes-128-cfb               -aes-128-cfb1
-	-aes-128-cfb8              -aes-128-ctr               -aes-128-ecb
-	-aes-128-ofb               -aes-192-cbc               -aes-192-cfb
-	-aes-192-cfb1              -aes-192-cfb8              -aes-192-ctr
-	-aes-192-ecb               -aes-192-ofb               -aes-256-cbc
-	-aes-256-cfb               -aes-256-cfb1              -aes-256-cfb8
-	-aes-256-ctr               -aes-256-ecb               -aes-256-ofb
-	-aes128                    -aes128-wrap               -aes128-wrap-pad
-	-aes192                    -aes192-wrap               -aes192-wrap-pad
-	-aes256                    -aes256-wrap               -aes256-wrap-pad
-	-id-aes128-wrap            -id-aes128-wrap-pad        -id-aes192-wrap
-	-id-aes192-wrap-pad        -id-aes256-wrap            -id-aes256-wrap-pad
-	-aria-128-cbc              -aria-128-cfb              -aria-128-cfb1
-	-aria-128-cfb8             -aria-128-ctr              -aria-128-ecb
-	-aria-128-ofb              -aria-192-cbc              -aria-192-cfb
-	-aria-192-cfb1             -aria-192-cfb8             -aria-192-ctr
-	-aria-192-ecb              -aria-192-ofb              -aria-256-cbc
-	-aria-256-cfb              -aria-256-cfb1             -aria-256-cfb8
-	-aria-256-ctr              -aria-256-ecb              -aria-256-ofb
-	-aria128                   -aria192                   -aria256
-	-camellia-128-cbc          -camellia-128-cfb          -camellia-128-cfb1
-	-camellia-128-cfb8         -camellia-128-ctr          -camellia-128-ecb
-	-camellia-128-ofb          -camellia-192-cbc          -camellia-192-cfb
-	-camellia-192-cfb1         -camellia-192-cfb8         -camellia-192-ctr
-	-camellia-192-ecb          -camellia-192-ofb          -camellia-256-cbc
-	-camellia-256-cfb          -camellia-256-cfb1         -camellia-256-cfb8
-	-camellia-256-ctr          -camellia-256-ecb          -camellia-256-ofb
-	-camellia128               -camellia192               -camellia256
-	-franck                    -lucie
+	-aes-256-ctr 	    -aes-256-ofb        -aes-256-gcm
+	-aes-256-cbc 	    -aes-256-cfb 	-aes-256-cfb8
+	-aes-192-ctr 	    -aes-256-ccm        -camellia-256-cbc	
+	-camellia-256-cfb8
 
-Order of options matters.
 ```
 
 ## 🧪 Example
@@ -118,7 +89,7 @@ After installing `autocrypt.sh`, plugging in your **YubiKey**, your **KeePassXC 
 Encrypt the file:
 
 ```sh
-mathis ~ $ ./autocrypt.sh -e -aes-256-cbc hello.txt
+mathis ~ $ ./autocrypt.sh -e -aes-256-cbc hello.txt [v|--verbose]
 ```
 
 If the script is located in `~/Desktop` and your terminal is in `~`, use:
@@ -128,13 +99,10 @@ If the script is located in `~/Desktop` and your terminal is in `~`, use:
 ```
 
 ### Encryption output
-
+(Whithout -v options)
 ```sh
-Enter password to unlock KeePass database:
 1 encryption done
-Enter password to unlock KeePass database:
 2 encryption done
-Enter password to unlock KeePass database:
 3 encryption done
 ```
 
@@ -146,19 +114,16 @@ Salted__...binary encrypted data...
 ```
 
 ### Decryption
-
+**You don't need to remember which algorithm you had used the KeepassXC do it for you**
 ```sh
-mathis ~ $ ./autocrypt.sh -d -aes-256-cbc hello.txt
+mathis ~ $ ./autocrypt.sh -d hello.txt
 ```
 
 Decryption output:
 
 ```sh
-Enter password to unlock KeePass database:
 Decryption 3 done
-Enter password to unlock KeePass database:
 Decryption 2 done
-Enter password to unlock KeePass database:
 Decryption 1 done
 ```
 
@@ -178,16 +143,13 @@ AutoCrypt relies on the following tools:
 | `sh` (POSIX)    | Script execution              |
 | `openssl`       | Encryption / Decryption       |
 | `keepassxc-cli` | Password generation & storage |
-| `dd`            | Secure overwrite              |
-| `rm`            | File removal                  |
+| `shred'         | "Secure" erase                |
 | `uname`         | OS detection                  |
 
-Ensure all dependencies are available in your `$PATH`.
-
+Ensure all dependencies are available in your `$PATH` -don't worry if you have a Linux.
 
 ## ⚠️ Disclaimer
 
-AutoCrypt is designed for **advanced users**.
 Losing encryption credentials will result in **permanent data loss**.
 
 
