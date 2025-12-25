@@ -69,7 +69,7 @@ Mode :
 Cipher algorithm :
 
 	-aes-256-ctr 	    -aes-256-ofb        -aes-256-gcm
-	-aes-256-cbc 	    -aes-256-cfb 	-aes-256-cfb8
+	-aes-256-cbc 	    -aes-256-cfb 		-aes-256-cfb8
 	-aes-192-ctr 	    -aes-256-ccm        -camellia-256-cbc	
 	-camellia-256-cfb8
 
