@@ -116,7 +116,7 @@ Salted__...binary encrypted data...
 ### Decryption
 **You don't need to remember which algorithm you had used the KeepassXC do it for you**
 ```sh
-mathis ~ $ ./autocrypt.sh -d hello.txt
+mathis ~ $ ./autocrypt.sh -d hello.txt [-v|--verbose]
 ```
 
 Decryption output:
@@ -143,7 +143,7 @@ AutoCrypt relies on the following tools:
 | `sh` (POSIX)    | Script execution              |
 | `openssl`       | Encryption / Decryption       |
 | `keepassxc-cli` | Password generation & storage |
-| `shred'         | "Secure" erase                |
+| `shred`         | "Secure" erase                |
 | `uname`         | OS detection                  |
 
 Ensure all dependencies are available in your `$PATH` -don't worry if you have a Linux.
